@@ -10,6 +10,7 @@ const protect = asyncHandler(async (req, res, next) => {
 
     let token;
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+        // console.log('Token found in headers', req.headers.authorization);
         try {
             token = req.headers.authorization.split(' ')[1];
             const decoded = jwt.verify(token, JWT_SECRET);

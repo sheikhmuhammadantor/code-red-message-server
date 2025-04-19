@@ -66,6 +66,12 @@ const authUser = asyncHandler(async (req, res) => {
 
 // Search users
 const allUsers = asyncHandler(async (req, res) => {
+
+    // if (!req.user || !req.user._id) {
+    //     res.status(401);
+    //     throw new Error("Not authorized, user not found");
+    // }
+
     const keyword = req.query.search ? {
         $or: [
             { name: { $regex: req.query.search, $options: "i" } },
@@ -76,4 +82,23 @@ const allUsers = asyncHandler(async (req, res) => {
     res.send(users);
 });
 
-module.exports = { registerUser, authUser, allUsers };
+// Search one user
+const oneUser = asyncHandler(async (req, res) => {
+    const params = req.params.email;
+
+    const user = await User.findOne({ email: params });
+    if (user) {
+        res.json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            pic: user.pic,
+            token: generateToken(user._id),
+        });
+    } else {
+        res.status(401);
+        throw new Error("User Not Found !");
+    }
+})
+
+module.exports = { registerUser, authUser, allUsers, oneUser };

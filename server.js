@@ -18,7 +18,7 @@ dotenv.config()
 connectDB();
 
 app.get("/", (req, res) => {
-    res.send("API is Talking !");
+    res.send("API is Talking 1!");
 });
 
 app.use("/api/user", userRoutes);
@@ -45,6 +45,7 @@ const io = require("socket.io")(server, {
             "https://katha-koi.onrender.com",
             "https://katha-koi-2.onrender.com",
             "https://code-red-practice.onrender.com",
+            "https://code-red.onrender.com"
         ]
     },
 });
