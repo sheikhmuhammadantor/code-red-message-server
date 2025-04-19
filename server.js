@@ -45,7 +45,7 @@ const io = require("socket.io")(server, {
             "https://katha-koi.onrender.com",
             "https://katha-koi-2.onrender.com",
             "https://code-red-practice.onrender.com",
-            "https://code-red.onrender.com"
+            "https://code-red-ayzl.onrender.com"
         ]
     },
 });
