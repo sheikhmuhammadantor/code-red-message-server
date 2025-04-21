@@ -42,10 +42,9 @@ const io = require("socket.io")(server, {
             "http://localhost:5173",
             "http://localhost:4173",
             "http://localhost:3000",
-            "https://katha-koi.onrender.com",
-            "https://katha-koi-2.onrender.com",
-            "https://code-red-practice.onrender.com",
-            "https://code-red-ayzl.onrender.com"
+            "https://code-red-ayzl.onrender.com",
+            "https://code-red-dev.onrender.com",
+            "https://dev-message.onrender.com"
         ]
     },
 });
