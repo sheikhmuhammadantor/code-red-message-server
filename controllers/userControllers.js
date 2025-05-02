@@ -92,7 +92,7 @@ const oneUser = asyncHandler(async (req, res) => {
             _id: user._id,
             name: user.name,
             email: user.email,
-            image: user.image,
+            image: user.image || user.pic,
             token: generateToken(user._id),
         });
     } else {
