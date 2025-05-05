@@ -44,7 +44,8 @@ const io = require("socket.io")(server, {
             "http://localhost:3000",
             "https://code-red-ayzl.onrender.com",
             "https://code-red-dev.onrender.com",
-            "https://dev-message.onrender.com"
+            "https://dev-message.onrender.com",
+            "https://codered-amber.vercel.app"
         ]
     },
 });
